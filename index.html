@@ -45,6 +45,7 @@
         "description": "Cape Cod house cleaning and car detailing for homes, rental properties, and personal vehicles.",
         "image": "https://upper-cape-clean-detail.vercel.app/assets/hero.jpg",
         "url": "https://upper-cape-clean-detail.vercel.app/",
+        "email": "utopixgroup@icloud.com",
         "priceRange": "$$",
         "areaServed": [
           "Provincetown",
@@ -289,10 +290,13 @@
             <p class="quote-intro">
               Share the property, vehicle, town, and timing needed. This form is set up to collect the exact details needed for an accurate quote.
             </p>
-            <form class="quote-form" method="get" action="#quote">
+            <p class="contact-line">
+              Email: <a href="mailto:utopixgroup@icloud.com">utopixgroup@icloud.com</a>
+            </p>
+            <form class="quote-form" id="quote-form" method="post" action="mailto:utopixgroup@icloud.com">
               <label>
                 Service needed
-                <select name="service">
+                <select name="service" required>
                   <option>House cleaning</option>
                   <option>Rental turnover cleaning</option>
                   <option>Car detailing</option>
@@ -301,11 +305,19 @@
               </label>
               <label>
                 Town
-                <input type="text" name="town" placeholder="Provincetown, Truro, Wellfleet..." />
+                <input type="text" name="town" placeholder="Provincetown, Truro, Wellfleet..." required />
               </label>
               <label>
                 Timing
-                <input type="text" name="timing" placeholder="This week, before guests arrive, monthly..." />
+                <input type="text" name="timing" placeholder="This week, before guests arrive, monthly..." required />
+              </label>
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your name" />
+              </label>
+              <label>
+                Phone or email
+                <input type="text" name="contact" placeholder="Best way to reach you" required />
               </label>
               <label>
                 Details
@@ -313,6 +325,7 @@
                   name="details"
                   rows="5"
                   placeholder="Home size, vehicle type, turnover window, or anything else we should know."
+                  required
                 ></textarea>
               </label>
               <button class="button button-primary" type="submit">
@@ -344,5 +357,6 @@
         </section>
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
